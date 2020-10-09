@@ -67,29 +67,29 @@
         }
       }
 
-      function actualizar(str)
-      {
-        var id = document.getElementById("id").value;
-        var name = document.getElementById("name").value=b;
-        var des = document.getElementById("desc").value=c;
-        var brand = document.getElementById("brand").value=d;
-          if (str.length == 0) {
-          //document->html
-          document.getElementById("txtHint").innerHTML = "";
-          return;
-        } else {
-          //AJAX
-          var xmlhttp = new XMLHttpRequest();//->No cambian
-          xmlhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {//NO cambia
-
-                document.getElementById("txtHint").innerHTML = this.responseText;
-              }
-          };
-          xmlhttp.open("GET", "../Controlador/actualizar.php?id=" + id + ",name=" + name +",des=" + des +",brand" + brand, true);
-          xmlhttp.send();
-        }
-      }
+      function actualizar(str) {
+    var id=document.getElementById("id").value;
+    var nom=document.getElementById("name").value;
+    var des=document.getElementById("desc").value;
+    var marca=document.getElementById("brand").value;
+    if (str.length == 0) {
+        //document->html
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        //AJAX
+        var xmlhttp = new XMLHttpRequest();//->No cambian
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {//NO cambia
+              window.open("dispositivos.php", "_self");
+              document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "../Controlador/actualizar.php?id="+id+"&nom="+nom+"&des="+des+"&mar="+marca, true);
+        xmlhttp.send();
+}
+    //window.open("TypesD.php?id="+str, "_self");
+}
     </script>
 
 
@@ -117,10 +117,11 @@
 
 
 
+
 </form>
 <p>Funciona? : <div id="txtHint"></div></p>
+<td><button class="btn btn-info btn-block my-4" onclick="actualizar(1)">Actualizar</button></td>
 
-<td><button onclick="actualizar()">Actualizar</button></td>
 
 <?php
   require '../Controlador/loadDispositivo.php';

@@ -10,8 +10,8 @@ echo '<div class="table-responsive row d-flex justify-content-center"> <table bo
           <td> <font face="Arial">Descripcion</font> </td>
           <td> <font face="Arial">Marca</font> </td>
           <td> <font face="Arial">Modelo</font> </td>
-          <td> <font face="Arial">Seleccionar</font> </td>
           <td> <font face="Arial">Registrar</font> </td>
+          <td> <font face="Arial">Seleccionar</font> </td>
           <td> <font face="Arial">Eliminar</font> </td>
       </tr>';
 
